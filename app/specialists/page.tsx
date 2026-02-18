@@ -11,7 +11,7 @@ import {
     ShieldCheck,
     Users,
     Activity,
-    ClipboardLink,
+    Clipboard,
     Clock,
     Globe,
     Lock,

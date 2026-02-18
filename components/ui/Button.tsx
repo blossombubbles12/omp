@@ -5,13 +5,15 @@ import { ReactNode, ButtonHTMLAttributes } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     variant?: "primary" | "secondary" | "outline";
     size?: "sm" | "md" | "lg";
     className?: string;
     href?: string;
 }
+
+const MotionLink = motion.create(Link);
 
 /**
  * Animated button component with multiple variants.
@@ -23,6 +25,7 @@ export default function Button({
     size = "md",
     className = "",
     href,
+    type = "button",
     ...props
 }: ButtonProps) {
     const baseClasses =
@@ -50,8 +53,6 @@ export default function Button({
         className
     );
 
-    const MotionLink = motion.create(Link);
-
     if (href) {
         return (
             <MotionLink
@@ -67,10 +68,11 @@ export default function Button({
 
     return (
         <motion.button
+            type={type}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className={combinedClasses}
-            {...props}
+            {...(props as any)}
         >
             {children}
         </motion.button>

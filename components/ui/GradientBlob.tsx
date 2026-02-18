@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 interface GradientBlobProps {
     className?: string;
-    color?: "purple" | "blue" | "pink" | "green";
+    color?: "purple" | "blue" | "pink" | "green" | "rose";
     size?: "sm" | "md" | "lg";
 }
 
@@ -20,6 +20,7 @@ export default function GradientBlob({
         purple: "bg-gradient-to-br from-blue-400 to-indigo-600", // Adjusted from original purple
         blue: "bg-gradient-to-br from-sky-400 to-blue-600",
         pink: "bg-gradient-to-br from-rose-400 to-pink-600",
+        rose: "bg-gradient-to-br from-pink-400 to-rose-600",
         green: "bg-gradient-to-br from-emerald-400 to-teal-600",
     };
 

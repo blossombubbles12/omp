@@ -145,12 +145,12 @@ export default function EmployeesPage() {
                                     <div className="space-y-4">
                                         <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-2xl rounded-tl-none max-w-[80%]">
                                             <p className="text-sm text-gray-700 dark:text-gray-300">
-                                                "I've analyzed your recent stress patterns. I've found 3 top-tier specialists who match your specific needs and have availability tomorrow. Would you like to see their profiles?"
+                                                &quot;I&apos;ve analyzed your recent stress patterns. I&apos;ve found 3 top-tier specialists who match your specific needs and have availability tomorrow. Would you like to see their profiles?&quot;
                                             </p>
                                         </div>
                                         <div className="flex justify-end">
                                             <div className="p-4 bg-blue-600 text-white rounded-2xl rounded-tr-none max-w-[80%]">
-                                                <p className="text-sm">"Yes, please. Especially someone who specializes in executive cognitive load."</p>
+                                                <p className="text-sm">&quot;Yes, please. Especially someone who specializes in executive cognitive load.&quot;</p>
                                             </div>
                                         </div>
                                         <div className="p-4 bg-gray-50 dark:bg-gray-700/50 rounded-2xl rounded-tl-none max-w-[90%]">

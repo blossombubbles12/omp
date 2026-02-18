@@ -56,7 +56,7 @@ export default function RealitySection() {
                 <ScrollReveal delay={0.6}>
                     <div className="mt-20 text-center">
                         <p className="text-xl md:text-2xl text-gray-300 italic">
-                            "It's time to build systems that protect people, not just profits."
+                            &quot;It&apos;s time to build systems that protect people, not just profits.&quot;
                         </p>
                     </div>
                 </ScrollReveal>

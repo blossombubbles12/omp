@@ -49,6 +49,7 @@ export default function Header() {
         { name: "How It Works", id: "how-it-works", isScroll: true },
         { name: "For Businesses", path: "/businesses" },
         { name: "For Employees", path: "/employees" },
+        { name: "For Specialists", path: "/specialists" },
         { name: "Technology", path: "/technology" },
     ];
 

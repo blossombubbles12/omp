@@ -43,6 +43,11 @@ export default function Footer() {
                                 </a>
                             </li>
                             <li>
+                                <a href="/specialists" className="hover:text-blue-400 transition-colors">
+                                    For Specialists
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/technology" className="hover:text-blue-400 transition-colors">
                                     Technology
                                 </a>

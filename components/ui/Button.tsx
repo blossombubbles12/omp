@@ -1,7 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { ReactNode, ButtonHTMLAttributes } from "react";
+import { motion, HTMLMotionProps } from "framer-motion";
+import { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
@@ -72,7 +72,7 @@ export default function Button({
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className={combinedClasses}
-            {...(props as any)}
+            {...(props as HTMLMotionProps<"button">)}
         >
             {children}
         </motion.button>

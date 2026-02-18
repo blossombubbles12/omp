@@ -2,9 +2,7 @@
 
 import { motion } from "framer-motion";
 import Container from "../ui/Container";
-import Card from "../ui/Card";
 import ScrollReveal from "../animations/ScrollReveal";
-import { slideInLeft, slideInRight } from "../animations/variants";
 import { Activity, Banknote, BarChart3, Brain, FileHeart, ShieldCheck } from "lucide-react";
 
 /**

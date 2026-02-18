@@ -59,7 +59,7 @@ export default function HowItWorksSection() {
                             <span className="text-blue-600">Deep Impact.</span>
                         </h2>
                         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
-                            We've designed the onboarding to be as low-friction for HR as it is high-value for employees.
+                            We&apos;ve designed the onboarding to be as low-friction for HR as it is high-value for employees.
                         </p>
                     </div>
                 </ScrollReveal>

@@ -2,6 +2,7 @@ import HeroSection from "@/components/sections/HeroSection";
 import ProblemSection from "@/components/sections/ProblemSection";
 import RealitySection from "@/components/sections/RealitySection";
 import SolutionSection from "@/components/sections/SolutionSection";
+import EcosystemSection from "@/components/sections/EcosystemSection";
 import HowItWorksSection from "@/components/sections/HowItWorksSection";
 import EmployerSection from "@/components/sections/EmployerSection";
 import FeaturesSection from "@/components/sections/FeaturesSection";
@@ -19,6 +20,7 @@ export default function Home() {
       <ProblemSection />
       <RealitySection />
       <SolutionSection />
+      <EcosystemSection />
       <HowItWorksSection />
       <EmployerSection />
       <FeaturesSection />

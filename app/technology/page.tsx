@@ -16,7 +16,15 @@ import {
     Share2,
     Fingerprint,
     Code2,
-    Binary
+    Binary,
+    Network,
+    ShieldCheck,
+    Globe,
+    Server,
+    Layers,
+    Activity,
+    BrainCircuit,
+    FileText
 } from "lucide-react";
 
 /**
@@ -28,25 +36,48 @@ export default function TechnologyPage() {
             title: "Privacy-First Architecture",
             description: "Built on military-grade AES-256 encryption. We ensure that individual mental health and medical data remains strictly confidential, with only anonymized trends exposed to organizations.",
             icon: <Lock className="w-8 h-8 text-blue-600 dark:text-blue-400" />,
-            features: ["End-to-End Encryption", "Anonymization Layer", "SOC2 Compliance Ready"]
+            features: ["End-to-End Encryption", "Anonymization Layer", "SOC2 Compliance Ready", "Zero-Knowledge Proofs"]
         },
         {
             title: "Predictive AI Engine",
             description: "Our proprietary machine learning models analyze behavioral patterns and wellness metrics to identify burnout risks up to 3 months before they manifest.",
             icon: <Cpu className="w-8 h-8 text-purple-600 dark:text-purple-400" />,
-            features: ["Behavioral Nuance Detection", "Predictive Triage", "Real-time Risk Scoring"]
+            features: ["Behavioral Nuance Detection", "Predictive Triage", "Real-time Risk Scoring", "Custom Training Loops"]
         },
         {
             title: "Omni-Channel Access",
             description: "A seamless experience across Web, iOS, and Android. Built with a mobile-first philosophy to ensure support is reachable even in low-bandwidth environments.",
             icon: <Smartphone className="w-8 h-8 text-emerald-600 dark:text-emerald-400" />,
-            features: ["Progressive Web App", "Native Mobile Apps", "Offline Mode Support"]
+            features: ["Progressive Web App", "Native Mobile Apps", "Offline Mode Support", "Edge Cache Delivery"]
         },
         {
             title: "Interoperable Core",
             description: "Designed to sync effortlessly with global HRIS platforms and local HMO providers. We act as the glue between your existing tools and employee health.",
             icon: <Share2 className="w-8 h-8 text-rose-600 dark:text-rose-400" />,
-            features: ["RESTful API Support", "Webhook Integrations", "Single Sign-On (SSO)"]
+            features: ["RESTful API Support", "Webhook Integrations", "Single Sign-On (SSO)", "HL7/FHIR Standards"]
+        }
+    ];
+
+    const securityFeatures = [
+        {
+            title: "Data Residency",
+            description: "Regional data storage ensures compliance with local laws like GDPR and NDPR.",
+            icon: <Globe className="w-5 h-5" />
+        },
+        {
+            title: "Identity Management",
+            description: "SAML 2.0 and OIDC support for enterprise-wide secure authentication.",
+            icon: <Fingerprint className="w-5 h-5" />
+        },
+        {
+            title: "Encryption at Rest",
+            description: "All database volumes are encrypted using AWS KMS managed keys.",
+            icon: <ShieldCheck className="w-5 h-5" />
+        },
+        {
+            title: "Real-time Monitoring",
+            description: "Continuous automated security scanning and threat detection.",
+            icon: <Activity className="w-5 h-5" />
         }
     ];
 
@@ -77,7 +108,10 @@ export default function TechnologyPage() {
                             A fusion of deep medical expertise and modern software engineering. We've built an infrastructure capable of transforming thousands of lives in real-time.
                         </p>
                         <div className="flex flex-wrap items-center justify-center gap-4">
-                            <Button size="lg" href="/demo">Technical Whitepaper</Button>
+                            <Button size="lg" href="/whitepaper" className="gap-2">
+                                <FileText className="w-5 h-5" />
+                                Investor Whitepaper
+                            </Button>
                             <Button size="lg" variant="outline" onClick={() => {
                                 document.getElementById('architecture')?.scrollIntoView({ behavior: 'smooth' });
                             }}>Security Overview</Button>
@@ -123,8 +157,86 @@ export default function TechnologyPage() {
                 </Container>
             </section>
 
+            {/* AI Engine Deep Dive */}
+            <section className="py-24 bg-white dark:bg-gray-950 relative overflow-hidden">
+                <GradientBlob color="purple" size="lg" className="bottom-0 right-0 opacity-10" />
+                <Container>
+                    <div className="flex flex-col lg:flex-row items-center gap-16">
+                        <div className="lg:w-1/2">
+                            <ScrollReveal>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-50 dark:bg-purple-900/20 text-purple-600 dark:text-purple-400 text-xs font-bold mb-6 border border-purple-100 dark:border-purple-800">
+                                    <BrainCircuit className="w-4 h-4" />
+                                    <span>ADVANCED ML PIPELINE</span>
+                                </div>
+                                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                                    The Predictive <br /><span className="text-purple-600">Resilience Engine</span>
+                                </h2>
+                                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                                    Our AI doesn't just react—it anticipates. By analyzing multi-dimensional data points ranging from interaction frequency to clinical assessment shifts, we identify emerging crisis patterns.
+                                </p>
+                                <div className="space-y-4">
+                                    {[
+                                        { t: "Dynamic Feature Engineering", d: "Automatic extraction of behavioral markers from anonymized sessions." },
+                                        { t: "Ethical AI Guardrails", d: "Strict bias prevention and differential privacy for all model training." },
+                                        { t: "Predictive Scoring", d: "Proprietary algorithms that assign 1-100 risk scores per cohort." }
+                                    ].map((item, idx) => (
+                                        <div key={idx} className="p-4 rounded-xl border border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50">
+                                            <h4 className="font-bold text-gray-900 dark:text-white mb-1">{item.t}</h4>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400">{item.d}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </ScrollReveal>
+                        </div>
+                        <div className="lg:w-1/2 relative bg-gray-900 rounded-[2.5rem] p-8 aspect-video flex items-center justify-center border border-gray-800 shadow-2xl overflow-hidden">
+                            <div className="absolute inset-0 opacity-30">
+                                <div className="w-full h-full bg-[radial-gradient(#3b82f6_1px,transparent_1px)] [background-size:16px_16px]" />
+                            </div>
+                            <div className="relative z-10 grid grid-cols-2 gap-4">
+                                <motion.div
+                                    animate={{ y: [0, -10, 0] }}
+                                    transition={{ duration: 4, repeat: Infinity }}
+                                    className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white"
+                                >
+                                    <div className="text-xs font-bold mb-2 text-blue-400">INPUT LAYER</div>
+                                    <div className="text-2xl font-black">2.4M</div>
+                                    <div className="text-[10px] opacity-60 uppercase tracking-tighter">Data points processed</div>
+                                </motion.div>
+                                <motion.div
+                                    animate={{ y: [0, 10, 0] }}
+                                    transition={{ duration: 5, repeat: Infinity }}
+                                    className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white"
+                                >
+                                    <div className="text-xs font-bold mb-2 text-purple-400">ACCURACY</div>
+                                    <div className="text-2xl font-black">98.2%</div>
+                                    <div className="text-[10px] opacity-60 uppercase tracking-tighter">Prediction Confidence</div>
+                                </motion.div>
+                                <motion.div
+                                    animate={{ y: [0, -8, 0] }}
+                                    transition={{ duration: 3, repeat: Infinity }}
+                                    className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white"
+                                >
+                                    <div className="text-xs font-bold mb-2 text-emerald-400">RESPONSE</div>
+                                    <div className="text-2xl font-black">&lt;200ms</div>
+                                    <div className="text-[10px] opacity-60 uppercase tracking-tighter">Inference Latency</div>
+                                </motion.div>
+                                <motion.div
+                                    animate={{ y: [0, 12, 0] }}
+                                    transition={{ duration: 6, repeat: Infinity }}
+                                    className="p-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/20 text-white"
+                                >
+                                    <div className="text-xs font-bold mb-2 text-rose-400">UPTIME</div>
+                                    <div className="text-2xl font-black">99.99%</div>
+                                    <div className="text-[10px] opacity-60 uppercase tracking-tighter">System Availability</div>
+                                </motion.div>
+                            </div>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
             {/* Architecture Visualization Section */}
-            <section id="architecture" className="py-24 bg-white dark:bg-gray-950">
+            <section id="architecture" className="py-24 bg-gray-50 dark:bg-gray-900 border-y border-gray-100 dark:border-gray-800">
                 <Container>
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                         <ScrollReveal>
@@ -133,28 +245,28 @@ export default function TechnologyPage() {
                                 <div className="space-y-4">
                                     <div className="p-6 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl shadow-lg border border-white/10">
                                         <div className="flex items-center gap-4 text-white">
-                                            <ShieldAlert className="w-6 h-6" />
+                                            <Layers className="w-6 h-6" />
                                             <div>
-                                                <div className="text-xs opacity-70 uppercase font-bold tracking-widest mb-1">Layer 1: Interface</div>
-                                                <div className="font-bold">Encrypted Web & Mobile Client</div>
+                                                <div className="text-xs opacity-70 uppercase font-bold tracking-widest mb-1">Layer 1: Experience</div>
+                                                <div className="font-bold">React-Native & Next.js Omni-Hub</div>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="ml-8 p-6 bg-gray-900 rounded-2xl shadow-lg border border-gray-800">
                                         <div className="flex items-center gap-4 text-white">
-                                            <Binary className="w-6 h-6 text-purple-400" />
+                                            <Server className="w-6 h-6 text-purple-400" />
                                             <div>
-                                                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">Layer 2: Logic</div>
-                                                <div className="font-bold text-purple-400 italic">AI Burnout Prediction Engine</div>
+                                                <div className="text-xs text-gray-500 uppercase font-bold tracking-widest mb-1">Layer 2: Engine</div>
+                                                <div className="font-bold text-purple-400">Distributed AI Microservices</div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="ml-16 p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+                                    <div className="ml-16 p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
                                         <div className="flex items-center gap-4 text-gray-900 dark:text-white">
                                             <Database className="w-6 h-6 text-blue-500" />
                                             <div>
-                                                <div className="text-xs text-gray-400 uppercase font-bold tracking-widest mb-1">Layer 3: Storage</div>
-                                                <div className="font-bold">Localized HIPAA-Compliant Data Store</div>
+                                                <div className="text-xs text-gray-400 uppercase font-bold tracking-widest mb-1">Layer 3: Data</div>
+                                                <div className="font-bold">Sharded Multi-Tenant Data Vault</div>
                                             </div>
                                         </div>
                                     </div>
@@ -163,7 +275,7 @@ export default function TechnologyPage() {
                                     </div>
                                     <div className="text-center">
                                         <div className="inline-block px-6 py-3 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/20">
-                                            Real-time Wellbeing Infrastructure
+                                            Global Infrastructure Mesh
                                         </div>
                                     </div>
                                 </div>
@@ -174,42 +286,61 @@ export default function TechnologyPage() {
                             <div>
                                 <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
                                     Secure by Design. <br />
-                                    <span className="text-blue-600">Built for Scale.</span>
+                                    <span className="text-blue-600">Enterprise Ready.</span>
                                 </h2>
-                                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8">
+                                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
                                     We don't just build features; we build systems. Our technology is designed to handle the complex, sensitive nature of healthcare data while providing the speed organizational leaders need.
                                 </p>
-                                <div className="space-y-6">
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
-                                            <Fingerprint className="w-6 h-6 text-blue-600" />
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                    {securityFeatures.map((feature, idx) => (
+                                        <div key={idx} className="flex gap-4">
+                                            <div className="w-10 h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                                <span className="text-blue-600">{feature.icon}</span>
+                                            </div>
+                                            <div>
+                                                <h4 className="font-bold text-gray-900 dark:text-white text-sm">{feature.title}</h4>
+                                                <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">{feature.description}</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 dark:text-white">Biometric Security</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">Device-level authentication for all mobile sessions.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/30 flex items-center justify-center flex-shrink-0">
-                                            <Cloud className="w-6 h-6 text-indigo-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 dark:text-white">High Availability</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">99.9% uptime SLA across all critical wellbeing services.</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex gap-4">
-                                        <div className="w-12 h-12 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
-                                            <Code2 className="w-6 h-6 text-purple-600" />
-                                        </div>
-                                        <div>
-                                            <h4 className="font-bold text-gray-900 dark:text-white">API First</h4>
-                                            <p className="text-gray-500 dark:text-gray-400">Extensive documentation for custom internal dashboard syncs.</p>
-                                        </div>
-                                    </div>
+                                    ))}
+                                </div>
+                                <div className="mt-10 p-6 rounded-2xl bg-blue-600 text-white italic">
+                                    "Our goal was to create a platform that feels like it belongs in 2030—where security is implicit, and empathy is powered by data."
                                 </div>
                             </div>
                         </ScrollReveal>
+                    </div>
+                </Container>
+            </section>
+
+            {/* Global Infrastructure */}
+            <section className="py-24 bg-white dark:bg-gray-950">
+                <Container>
+                    <div className="text-center mb-16">
+                        <ScrollReveal>
+                            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Deployed on a <span className="text-blue-600">Global Scale</span></h2>
+                            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+                                Leveraging edge computing and localized data silos to ensure zero latency and full compliance across every continent.
+                            </p>
+                        </ScrollReveal>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        {[
+                            { title: "Edge Networks", desc: "Content delivery through a global mesh of CDN nodes for instant loading.", icon: <Network /> },
+                            { title: "Auto-Scaling", desc: "Real-time resource allocation based on concurrent session spikes.", icon: <Zap /> },
+                            { title: "DR Sites", desc: "Redundant hot-swappable data centers for maximum business continuity.", icon: <Cloud /> }
+                        ].map((item, i) => (
+                            <ScrollReveal key={i} delay={i * 0.1}>
+                                <div className="p-8 rounded-3xl bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-blue-500 transition-all text-center">
+                                    <div className="w-12 h-12 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center mx-auto mb-6 text-blue-600">
+                                        {item.icon}
+                                    </div>
+                                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{item.title}</h3>
+                                    <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">{item.desc}</p>
+                                </div>
+                            </ScrollReveal>
+                        ))}
                     </div>
                 </Container>
             </section>
@@ -225,7 +356,10 @@ export default function TechnologyPage() {
                                 Schedule a technical deep-dive with our engineering team to understand how we protect your data and your people.
                             </p>
                             <div className="flex justify-center gap-4">
-                                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" href="/demo">
+                                <Button size="lg" variant="outline" className="border-white/20 text-white hover:bg-white/10" href="/whitepaper">
+                                    Download Whitepaper
+                                </Button>
+                                <Button size="lg" className="bg-white text-blue-900 hover:bg-gray-100" href="/demo">
                                     Technical Briefing
                                 </Button>
                             </div>

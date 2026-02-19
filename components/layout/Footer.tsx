@@ -52,6 +52,11 @@ export default function Footer() {
                                     Technology
                                 </a>
                             </li>
+                            <li>
+                                <a href="/whitepaper" className="hover:text-blue-400 transition-colors">
+                                    Investor Whitepaper
+                                </a>
+                            </li>
                         </ul>
                     </div>
 

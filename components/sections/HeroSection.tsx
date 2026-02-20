@@ -145,7 +145,7 @@ export default function HeroSection() {
                         className="relative"
                     >
                         <div
-                            className="relative rounded-[2.5rem] overflow-hidden shadow-2xl group cursor-pointer aspect-video lg:aspect-[4/3] bg-gray-900"
+                            className="relative rounded-[2.5rem] sm:rounded-[3rem] overflow-hidden shadow-3xl group cursor-pointer aspect-square sm:aspect-video lg:aspect-[16/10] bg-gray-900 -mx-4 sm:mx-0"
                             onClick={togglePlay}
                         >
                             <video

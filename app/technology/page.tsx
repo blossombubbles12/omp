@@ -24,7 +24,10 @@ import {
     Layers,
     Activity,
     BrainCircuit,
-    FileText
+    FileText,
+    Wind,
+    Waves,
+    Target as Aim
 } from "lucide-react";
 
 /**
@@ -230,6 +233,67 @@ export default function TechnologyPage() {
                                     <div className="text-[10px] opacity-60 uppercase tracking-tighter">System Availability</div>
                                 </motion.div>
                             </div>
+                        </div>
+                    </div>
+                </Container>
+            </section>
+
+            {/* Bio-Synchronous Interface Section */}
+            <section className="py-24 bg-gradient-to-b from-white to-blue-50 dark:from-gray-950 dark:to-gray-900 relative">
+                <Container>
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+                        <div className="lg:w-1/2">
+                            <ScrollReveal>
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 text-xs font-bold mb-6 border border-blue-100 dark:border-blue-800">
+                                    <Wind className="w-4 h-4" />
+                                    <span>NEURO-REGULATION TECH</span>
+                                </div>
+                                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">
+                                    Bio-Synchronous <br /><span className="text-blue-600">Resonance Hub</span>
+                                </h2>
+                                <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+                                    Mental health tech isn't just about forms; it's about immediate relief. Our 1-minute resonance breathing tool uses high-frequency visual synchronization to lower cortisol levels and regulate the nervous system in real-time.
+                                </p>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div className="p-5 rounded-2xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700">
+                                        <Waves className="w-6 h-6 text-blue-500 mb-3" />
+                                        <h4 className="font-bold text-sm mb-1">Visual Entrainment</h4>
+                                        <p className="text-xs text-gray-500">Fluid color transitions mapped to optimal 5.5-second breath cycles.</p>
+                                    </div>
+                                    <div className="p-5 rounded-2xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700">
+                                        <Aim className="w-6 h-6 text-emerald-500 mb-3" />
+                                        <h4 className="font-bold text-sm mb-1">Heart-Rate Variability</h4>
+                                        <p className="text-xs text-gray-500">Designed to optimize HRV and maximize parasympathetic activation.</p>
+                                    </div>
+                                </div>
+                            </ScrollReveal>
+                        </div>
+                        <div className="lg:w-1/2">
+                            <ScrollReveal delay={0.2}>
+                                <div className="relative aspect-square flex items-center justify-center">
+                                    <motion.div
+                                        animate={{
+                                            scale: [0.8, 1.2, 0.8],
+                                            backgroundColor: ["#3b82f6", "#10b981", "#3b82f6"],
+                                            filter: ["blur(40px)", "blur(80px)", "blur(40px)"]
+                                        }}
+                                        transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                                        className="w-64 h-64 rounded-full opacity-30"
+                                    />
+                                    <div className="absolute inset-0 flex items-center justify-center">
+                                        <motion.div
+                                            animate={{ scale: [0.9, 1.1, 0.9] }}
+                                            transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
+                                            className="w-48 h-48 rounded-full border-2 border-blue-500/20 flex items-center justify-center p-8"
+                                        >
+                                            <div className="text-center">
+                                                <div className="text-xs font-bold text-blue-600 dark:text-blue-400 tracking-tighter uppercase">Inhale</div>
+                                                <Wind className="w-6 h-6 mx-auto mt-2 text-blue-500" />
+                                            </div>
+                                        </motion.div>
+                                    </div>
+                                </div>
+                            </ScrollReveal>
                         </div>
                     </div>
                 </Container>
